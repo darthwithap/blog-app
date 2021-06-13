@@ -1,24 +1,21 @@
 package me.darthwithap.api.client
 
-import me.darthwithap.api.models.entities.UserLoginCreds
-import me.darthwithap.api.models.entities.UserRegisterCreds
+import me.darthwithap.api.models.requests.LoginRequest
+import me.darthwithap.api.models.requests.RegisterRequest
 import me.darthwithap.api.models.responses.ArticlesResponse
 import me.darthwithap.api.models.responses.UserResponse
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface ConduitApi {
     @POST("users/login")
     suspend fun loginUser(
-        @Body userLoginCreds: UserLoginCreds
+        @Body loginRequest: LoginRequest
     ): Response<UserResponse>
 
     @POST("users")
     suspend fun registerUser(
-        @Body userRegisterCreds: UserRegisterCreds
+        @Body registerRequest: RegisterRequest
     ): Response<UserResponse>
 
     @GET("articles")

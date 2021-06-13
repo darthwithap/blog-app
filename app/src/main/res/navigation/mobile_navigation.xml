@@ -22,4 +22,16 @@
         android:name="me.darthwithap.blogapp.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_glob_feed"
+        android:name="me.darthwithap.blogapp.ui.feed.GlobalFeedFragment"
+        android:label="@string/menu_glob_feed"
+        tools:layout="@layout/fragment_feed" />
+
+    <fragment
+        android:id="@+id/nav_my_feed"
+        android:name="me.darthwithap.blogapp.ui.feed.MyFeedFragment"
+        android:label="@string/menu_my_feed"
+        tools:layout="@layout/fragment_feed" />
 </navigation>

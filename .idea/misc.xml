@@ -3,11 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/drawable-v24/bg_tag_list_item.xml" value="0.28177083333333336" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/drawable/bg_favorite_count.xml" value="0.28177083333333336" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/drawable/side_nav_bar.xml" value="0.28177083333333336" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/app_bar_main.xml" value="0.265625" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/content_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/fragment_feed.xml" value="0.265625" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/fragment_home.xml" value="0.265625" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/list_item_article.xml" value="0.264" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/list_item_tag.xml" value="0.6" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/nav_header_main.xml" value="0.265625" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.265625" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/menu/main.xml" value="0.265625" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
