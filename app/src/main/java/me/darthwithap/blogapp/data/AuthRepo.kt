@@ -8,7 +8,7 @@ import me.darthwithap.api.models.requests.RegisterRequest
 import me.darthwithap.api.models.responses.UserResponse
 
 object AuthRepo {
-    private val api = ApiClient().api
+    private val api = ApiClient.api
 
     suspend fun loginUser(email: String, password: String): UserResponse? {
         val response = api.loginUser(
@@ -18,6 +18,7 @@ object AuthRepo {
                 )
             )
         )
+        ApiClient.setAuthToken(response.body()?.user?.token)
 
         return response.body()
     }
