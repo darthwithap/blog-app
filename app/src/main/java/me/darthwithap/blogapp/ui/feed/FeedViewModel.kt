@@ -15,7 +15,7 @@ class FeedViewModel : ViewModel() {
 
     fun updateGlobalFeed(): Job {
         return viewModelScope.launch {
-            ArticlesRepo.getGlobalArticles().body()?.let {
+            ArticlesRepo.getGlobalArticles()?.let {
                 _feed.postValue(it.articles)
             }
         }

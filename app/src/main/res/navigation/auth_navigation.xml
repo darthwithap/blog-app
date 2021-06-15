@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="me.darthwithap.blogapp.ui.auth.LoginFragment"
+        android:label="LoginFragment" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="me.darthwithap.blogapp.ui.auth.RegisterFragment"
+        android:label="RegisterFragment" />
+
+    <action
+        android:id="@+id/gotoLoginFragment"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <action
+        android:id="@+id/gotoRegisterFragment"
+        app:destination="@id/registerFragment"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+</navigation>

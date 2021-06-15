@@ -4,18 +4,27 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/drawable-v24/bg_tag_list_item.xml" value="0.28177083333333336" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/drawable/bg_favorite_count.xml" value="0.28177083333333336" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/drawable/side_nav_bar.xml" value="0.28177083333333336" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/app_bar_main.xml" value="0.265625" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/content_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/fragment_auth.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/fragment_feed.xml" value="0.265625" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/fragment_home.xml" value="0.265625" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/fragment_register.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/list_item_article.xml" value="0.264" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/list_item_tag.xml" value="0.6" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/layout/nav_header_main.xml" value="0.265625" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.265625" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/menu/bottom_nav_auth.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/menu/main.xml" value="0.265625" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/menu/main_menu_guest.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/menu/main_menu_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
       </map>
     </option>
   </component>
