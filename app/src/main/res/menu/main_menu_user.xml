@@ -12,10 +12,5 @@
             android:id="@+id/nav_my_feed"
             android:icon="@drawable/ic_menu_your_feed"
             android:title="@string/menu_my_feed" />
-
-        <item
-            android:id="@+id/nav_auth"
-            android:icon="@drawable/ic_menu_auth"
-            android:title="@string/menu_auth" />
     </group>
 </menu>

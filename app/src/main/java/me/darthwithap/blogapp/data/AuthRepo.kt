@@ -31,6 +31,7 @@ object AuthRepo {
                 )
             )
         )
+        ApiClient.setAuthToken(response.body()?.user?.token)
 
         return response.body()
     }

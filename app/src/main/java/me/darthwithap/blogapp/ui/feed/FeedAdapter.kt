@@ -23,7 +23,6 @@ class FeedAdapter : ListAdapter<Article, FeedAdapter.FeedViewHolder>(
     }
 ) {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
         val binding = ListItemArticleBinding.inflate(
             LayoutInflater.from(parent.context),

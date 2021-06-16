@@ -29,7 +29,7 @@ class GlobalFeedFragment : Fragment() {
         _binding?.rvFeed?.layoutManager =
             LinearLayoutManager(context)
         _binding?.rvFeed?.adapter = feedAdapter
-        feedViewModel.feed.observe(viewLifecycleOwner) {
+        feedViewModel.globalFeed.observe(viewLifecycleOwner) {
             feedAdapter.submitList(it)
         }
 

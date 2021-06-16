@@ -9,6 +9,7 @@
     <color name="crayola_gray_dark">#687077</color>
     <color name="just_white">#FFF1F1F1</color>
     <color name="just_black">#FF232323</color>
+    <color name="error_red">#FFB00020</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
 </resources>

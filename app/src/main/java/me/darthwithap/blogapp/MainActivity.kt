@@ -1,11 +1,14 @@
 package me.darthwithap.blogapp
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -21,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var authViewModel: AuthViewModel
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +39,9 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-        val drawerLayout: DrawerLayout = binding.drawerLayout
+        drawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -52,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         authViewModel.user.observe({ lifecycle }) {
             binding.navView.inflateMenu(updateNavMenu(it))
             //move to feed page and login globally
-            Toast.makeText(this, "User logged in as ${it.username}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "User is: ${it?.username}", Toast.LENGTH_SHORT).show()
             navController.navigateUp()
         }
     }
@@ -61,6 +66,23 @@ class MainActivity : AppCompatActivity() {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                navController.navigate(R.id.nav_settings)
+                true
+            }
+            android.R.id.home -> {
+                drawerLayout.openDrawer(Gravity.START, true)
+                true
+            }
+            else -> {
+                // create a logout alert dialog and then logout
+                true
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

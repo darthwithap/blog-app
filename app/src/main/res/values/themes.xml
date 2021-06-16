@@ -12,7 +12,9 @@
         <item name="colorSecondaryVariant">@color/crayola_gray_dark</item>
         <item name="colorOnSecondary">@color/just_white</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/blue_crayola_dark_transparent</item>
+        <item name="android:statusBarColor" tools:targetApi="l">
+            @color/blue_crayola_dark_transparent
+        </item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -24,8 +26,16 @@
     <style name="Theme.BlogApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.BlogApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    
+
     <style name="Theme.BlogApp.ShapableImageView.Rounded" parent="Theme.BlogApp">
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.OutlinedButton.Error" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_padding_left</item>
+        <item name="android:paddingRight">@dimen/mtrl_btn_padding_right</item>
+        <item name="android:textColor">@color/error_red</item>
+        <item name="strokeColor">@color/error_red</item>
+        <item name="strokeWidth">@dimen/mtrl_btn_stroke_size</item>
     </style>
 </resources>
