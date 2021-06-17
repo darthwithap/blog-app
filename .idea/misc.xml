@@ -28,6 +28,8 @@
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/menu/main_menu_guest.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/menu/main_menu_user.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/SWEERATAKKAR/AndroidStudioProjects/BlogApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
+        <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.22554347826086957" />
+        <entry key="app/src/main/res/layout/fragment_login_register.xml" value="0.1" />
       </map>
     </option>
   </component>

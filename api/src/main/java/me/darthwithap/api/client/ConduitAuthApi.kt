@@ -1,13 +1,13 @@
 package me.darthwithap.api.client
 
+import me.darthwithap.api.models.requests.CommentRequest
 import me.darthwithap.api.models.requests.CreateArticleRequest
+import me.darthwithap.api.models.requests.UpdateArticleRequest
 import me.darthwithap.api.models.requests.UserUpdateRequest
-import me.darthwithap.api.models.responses.ArticleResponse
-import me.darthwithap.api.models.responses.ArticlesResponse
-import me.darthwithap.api.models.responses.ProfileResponse
-import me.darthwithap.api.models.responses.UserResponse
+import me.darthwithap.api.models.responses.*
 import retrofit2.Response
 import retrofit2.http.*
+import kotlin.reflect.jvm.internal.impl.resolve.ResolutionAnchorProvider
 
 interface ConduitAuthApi {
     @GET("user")
@@ -34,7 +34,10 @@ interface ConduitAuthApi {
     ): Response<ProfileResponse>
 
     @GET("articles/feed")
-    suspend fun getFeedArticles(): Response<ArticlesResponse>
+    suspend fun getFeedArticles(
+        @Query("limit") limit: Int? = null,
+        @Query("offset") offset: Int? = null
+    ): Response<ArticlesResponse>
 
     @GET("articles/{slug}")
     suspend fun getArticleSlug(
@@ -55,4 +58,32 @@ interface ConduitAuthApi {
     suspend fun createArticle(
         @Body createArticleRequest: CreateArticleRequest
     ): Response<ArticleResponse>
+
+    @PUT("/api/articles/{slug}")
+    suspend fun updateArticle(
+        @Path("slug") slug: String,
+        @Body updateArticleRequest: UpdateArticleRequest
+    ): Response<ArticleResponse>
+
+    @DELETE("articles/{slug}")
+    suspend fun deleteArticle(
+        @Path("slug") slug: String
+    )
+
+    @POST("/api/articles/{slug}/comments")
+    suspend fun postComment(
+        @Path("slug") slug: String,
+        @Body commentRequest: CommentRequest
+    ): Response<CommentResponse>
+
+    @GET("/api/articles/{slug}/comments")
+    suspend fun getCommentsOnArticle(
+        @Path("slug") slug: String
+    ): Response<ArticlesResponse>
+
+    @DELETE("/api/articles/{slug}/comments/{id}")
+    suspend fun deleteCommentOnArticle(
+        @Path("slug") slug: String,
+        @Path("id") commentId: String
+    )
 }

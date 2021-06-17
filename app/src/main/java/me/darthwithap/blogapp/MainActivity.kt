@@ -75,7 +75,6 @@ class MainActivity : AppCompatActivity() {
 
         authViewModel.user.observe({ lifecycle }) {
             binding.navView.inflateMenu(updateNavMenu(it))
-            navController.navigateUp()
             it?.token?.let { token ->
                 sharedPreferences.edit {
                     putString(resources.getString(R.string.prefs_key_token), token)
@@ -85,7 +84,9 @@ class MainActivity : AppCompatActivity() {
                     remove(resources.getString(R.string.prefs_key_token))
                 }
             }
+            navController.navigateUp()
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

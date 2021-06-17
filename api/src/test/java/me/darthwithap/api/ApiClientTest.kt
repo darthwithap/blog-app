@@ -10,7 +10,7 @@ import org.junit.Assert.assertNotNull
 import org.junit.Test
 
 class ApiClientTest {
-    private val apiClient = ApiClient()
+    private val apiClient = ApiClient
 
     @Test
     fun `GET articles`() {
@@ -62,15 +62,6 @@ class ApiClientTest {
         runBlocking {
             val response = apiClient.api.loginUser(LoginRequest(userLoginCreds))
             assertEquals(userLoginCreds.email, response.body()?.user?.email)
-        }
-    }
-
-    @Test
-    fun `GET users currentUser`() {
-        runBlocking {
-            val response =
-                apiClient.api.getCurrentUser("Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTc1MTA2LCJ1c2VybmFtZSI6InJhbmRVc2VyODY5NiIsImV4cCI6MTYyODY3OTczNn0.O2PwPcvrynYhvyf2xDG7PBKxhIIIyxY6YRarq4Fb0-g")
-            assertEquals("randUser8696", response.body()?.user?.username)
         }
     }
 }
