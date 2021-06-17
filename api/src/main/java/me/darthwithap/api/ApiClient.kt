@@ -38,12 +38,12 @@ object ApiClient {
         .baseUrl("https://conduit.productionready.io/api/")
         .addConverterFactory(MoshiConverterFactory.create())
 
-    val api = retrofitBuilder
+    val api: ConduitApi = retrofitBuilder
         .client(okhttp.build())
         .build()
         .create(ConduitApi::class.java)
 
-    val authApi = retrofitBuilder
+    val authApi: ConduitAuthApi = retrofitBuilder
         .client(okhttp.addInterceptor(okhttpInterceptor).build())
         .build()
         .create(ConduitAuthApi::class.java)

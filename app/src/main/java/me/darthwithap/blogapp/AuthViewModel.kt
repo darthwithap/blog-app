@@ -37,6 +37,10 @@ class AuthViewModel : ViewModel() {
         }
     }
 
+    fun logout() {
+        _user.postValue(null)
+    }
+
     fun update(
         image: String?,
         bio: String?,
@@ -46,6 +50,14 @@ class AuthViewModel : ViewModel() {
     ): Job {
         return viewModelScope.launch {
             UserRepo.updateUser(image, bio, email, username, password)?.let {
+                _user.postValue(it.user)
+            }
+        }
+    }
+
+    fun getCurrentUser(token: String): Job {
+        return viewModelScope.launch {
+            UserRepo.currentUser(token)?.let {
                 _user.postValue(it.user)
             }
         }

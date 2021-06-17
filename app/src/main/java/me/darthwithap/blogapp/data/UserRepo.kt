@@ -25,4 +25,9 @@ object UserRepo {
 
         return response.body()
     }
+
+    suspend fun currentUser(token: String): UserResponse? {
+        ApiClient.setAuthToken(token)
+        return authApi.getCurrentUser().body()
+    }
 }

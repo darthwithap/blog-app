@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import me.darthwithap.api.models.entities.Article
 import me.darthwithap.blogapp.databinding.ListItemArticleBinding
+import me.darthwithap.blogapp.extensions.srcUri
+import me.darthwithap.blogapp.extensions.timestamp
 
 class FeedAdapter : ListAdapter<Article, FeedAdapter.FeedViewHolder>(
     object : DiffUtil.ItemCallback<Article>() {
@@ -42,11 +44,11 @@ class FeedAdapter : ListAdapter<Article, FeedAdapter.FeedViewHolder>(
             ListItemArticleBinding.bind(itemView).apply {
                 with(article) {
                     tvTitle.text = title
-                    tvCreatedAt.text = updatedAt
+                    tvCreatedAt.timestamp = createdAt
                     tvDescription.text = description
                     tvFavoriteCount.text = favoritesCount.toString()
                     tvUsernameOrEmail.text = author.username
-                    //Add author profile image using glide or picasso
+                    civProfile.srcUri = author.image
                     rvTags.layoutManager = LinearLayoutManager(
                         rvTags.context,
                         LinearLayoutManager.HORIZONTAL,

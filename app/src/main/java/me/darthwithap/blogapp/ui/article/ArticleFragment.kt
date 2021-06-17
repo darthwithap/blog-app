@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import me.darthwithap.blogapp.R
 import me.darthwithap.blogapp.databinding.FragmentArticleBinding
+import me.darthwithap.blogapp.extensions.srcUri
+import me.darthwithap.blogapp.extensions.timestamp
 
 class ArticleFragment : Fragment() {
 
@@ -39,7 +41,8 @@ class ArticleFragment : Fragment() {
                 tvTitle.text = it.title
                 tvBody.text = it.body
                 tvUsernameOrEmail.text = it.author.username
-                tvCreatedAt.text = it.createdAt
+                tvCreatedAt.timestamp = it.createdAt
+                civProfileImg.srcUri = it.author.image
             }
         }
     }

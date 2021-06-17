@@ -25,4 +25,6 @@
     <string name="short_bio">Short Bio</string>
     <string name="image_url">Profile Image Url</string>
     <string name="arg_article_id">ARTICLE_ID</string>
+    <string name="app_shared_preferences">APP_SHARED_PREFEERENCES</string>
+    <string name="prefs_key_token">token</string>
 </resources>

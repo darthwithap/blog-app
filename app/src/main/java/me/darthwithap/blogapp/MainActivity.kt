@@ -1,11 +1,15 @@
 package me.darthwithap.blogapp
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -26,12 +30,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var authViewModel: AuthViewModel
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navController: NavController
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        sharedPreferences = getSharedPreferences(
+            resources.getString(R.string.app_shared_preferences),
+            Context.MODE_PRIVATE
+        )
+
         authViewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
         setSupportActionBar(binding.appBarMain.toolbar)
 
@@ -53,12 +64,27 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    override fun onPostCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onPostCreate(savedInstanceState, persistentState)
+
+        sharedPreferences.getString(resources.getString(R.string.prefs_key_token), null)?.let {
+            authViewModel.getCurrentUser(it)
+        }
 
         authViewModel.user.observe({ lifecycle }) {
             binding.navView.inflateMenu(updateNavMenu(it))
-            //move to feed page and login globally
-            Toast.makeText(this, "User is: ${it?.username}", Toast.LENGTH_SHORT).show()
             navController.navigateUp()
+            it?.token?.let { token ->
+                sharedPreferences.edit {
+                    putString(resources.getString(R.string.prefs_key_token), token)
+                }
+            } ?: run {
+                sharedPreferences.edit {
+                    remove(resources.getString(R.string.prefs_key_token))
+                }
+            }
         }
     }
 
@@ -75,7 +101,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             android.R.id.home -> {
-                drawerLayout.openDrawer(Gravity.START, true)
+                drawerLayout.openDrawer(Gravity.LEFT, true)
                 true
             }
             else -> {
