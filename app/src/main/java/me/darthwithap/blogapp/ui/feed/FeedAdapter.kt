@@ -22,6 +22,7 @@ class FeedAdapter : ListAdapter<Article, FeedAdapter.FeedViewHolder>(
 
     }
 ) {
+    private var clickListener: OnArticleItemClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
         val binding = ListItemArticleBinding.inflate(
@@ -52,8 +53,20 @@ class FeedAdapter : ListAdapter<Article, FeedAdapter.FeedViewHolder>(
                         false
                     )
                     rvTags.adapter = TagAdapter(tagList)
+
+                    root.setOnClickListener {
+                        clickListener?.onArticleItemClicked(article.slug)
+                    }
                 }
             }
         }
+    }
+
+    interface OnArticleItemClickListener {
+        fun onArticleItemClicked(slug: String)
+    }
+
+    fun setOnArticleItemClickListener(listener: OnArticleItemClickListener) {
+        clickListener = listener
     }
 }

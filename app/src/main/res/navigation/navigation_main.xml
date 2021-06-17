@@ -9,13 +9,33 @@
         android:id="@+id/nav_glob_feed"
         android:name="me.darthwithap.blogapp.ui.feed.GlobalFeedFragment"
         android:label="@string/menu_glob_feed"
-        tools:layout="@layout/fragment_feed" />
+        tools:layout="@layout/fragment_feed">
+        <action
+            android:id="@+id/action_nav_glob_feed_to_nav_article"
+            app:destination="@id/nav_article"
+            app:popUpTo="@id/nav_glob_feed">
+
+            <argument android:name="@string/arg_article_id"
+                app:argType="string"/>
+
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/nav_my_feed"
         android:name="me.darthwithap.blogapp.ui.feed.MyFeedFragment"
         android:label="@string/menu_my_feed"
-        tools:layout="@layout/fragment_feed" />
+        tools:layout="@layout/fragment_feed">
+        <action
+            android:id="@+id/action_nav_my_feed_to_nav_article"
+            app:destination="@id/nav_article"
+            app:popUpTo="@id/nav_my_feed">
+
+            <argument android:name="@string/arg_article_id"
+                app:argType="string"/>
+
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/nav_auth"
@@ -28,5 +48,10 @@
         android:name="me.darthwithap.blogapp.ui.settings.SettingsFragment"
         android:label="@string/action_settings"
         tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_article"
+        android:name="me.darthwithap.blogapp.ui.article.ArticleFragment"
+        tools:layout="@layout/fragment_article" />
 
 </navigation>
